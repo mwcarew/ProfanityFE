@@ -24,7 +24,7 @@
 
 =end
 
-$version = 0.7
+$version = 0.7.1
 
 require 'thread'
 require 'socket'
@@ -2429,7 +2429,7 @@ Thread.new {
 						end
 					elsif xml =~ /^<(?:pushStream|component) id=("|')(.*?)\1[^>]*\/?>$/
 						new_stream = $2
-						if new_stream =~ /^exp (\w+)/
+						if new_stream =~ /^exp (\w+\s?\w+?)/
 							current_stream = 'exp'
 							stream_handler['exp'].set_current($1) if stream_handler['exp']
 						elsif new_stream =~ /^percWindow/

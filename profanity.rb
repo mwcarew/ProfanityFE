@@ -1351,6 +1351,9 @@ load_layout = proc { |layout_id|
 					elsif e.attributes['class'] == 'exp'
 						stream_handler['exp'] = ExpWindow.new(height, width - 1, top, left)
 						stream_handler['exp'].logger = logger
+					elsif e.attributes['class'] == 'moonWindow'
+						stream_handler['moonWindow'] = PercWindow.new(height, width - 1, top, left)
+						stream_handler['moonWindow'].logger = logger
 					elsif e.attributes['class'] == 'percWindow'
 						stream_handler['percWindow'] = PercWindow.new(height, width - 1, top, left)
 						stream_handler['percWindow'].logger = logger
@@ -2214,6 +2217,8 @@ Thread.new {
 							window = stream_handler['exp']
 						elsif current_stream == 'percWindow'
 							window = stream_handler['percWindow']
+						elsif current_stream == 'moonWindow'
+							window = stream_handler['moonWindow']
 						end
 						unless text =~ /^\[server\]: "(?:kill|connect)/
 							window.add_string(text, line_colors)
@@ -2432,6 +2437,9 @@ Thread.new {
 						if new_stream =~ /^exp (\w+\s?\w+?)/
 							current_stream = 'exp'
 							stream_handler['exp'].set_current($1) if stream_handler['exp']
+						elsif new_stream =~ /^moonWindow/
+							current_stream = 'moonWindow'
+							stream_handler['moonWindow'].clear_spells if stream_handler['moonWindow']
 						elsif new_stream =~ /^percWindow/
 							current_stream = 'percWindow'
 							stream_handler['percWindow'].clear_spells if stream_handler['percWindow']

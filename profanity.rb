@@ -24,7 +24,7 @@
 
 =end
 
-$version = 0.8
+$version = 0.81
 
 require 'thread'
 require 'socket'

@@ -2432,7 +2432,7 @@ Thread.new {
 								open_style[:bg] = PRESET[$2][1]
 							end
 						end
-					elsif xml =~ /^<(?:pushStream|component) id=("|')(.*?)\1[^>]*\/?>$/
+					elsif xml =~ /<(?:pushStream|component) id=("|')(.*?)\1[^>]*\/?>/
 						new_stream = $2
 						if new_stream =~ /^exp (\w+\s?\w+?)/
 							current_stream = 'exp'
@@ -2440,21 +2440,20 @@ Thread.new {
 						elsif new_stream =~ /^moonWindow/
 							current_stream = 'moonWindow'
 							stream_handler['moonWindow'].clear_spells if stream_handler['moonWindow']
-						elsif new_stream =~ /^percWindow/
-							current_stream = 'percWindow'
-							stream_handler['percWindow'].clear_spells if stream_handler['percWindow']
 						else 
 							current_stream = new_stream
 						end
 						game_text = line.slice!(0, start_pos)
 						handle_game_text.call(game_text)
-					elsif xml =~ /^<popStream/ or xml == '</component>'
+					elsif xml =~ /^<popStream(?!\/><pushStream)/ or xml == '</component>'
 						game_text = line.slice!(0, start_pos)
 						handle_game_text.call(game_text)
 						if current_stream == 'exp' and stream_handler['exp']
 							stream_handler['exp'].delete_skill
 						end
 						current_stream = nil
+					elsif xml =~/^<clearStream id="percWindow"\/>$/
+						stream_handler['percWindow'].clear_spells if stream_handler['percWindow']
 					elsif xml =~ /^<progressBar/
 						nil
 					elsif xml =~ /^<(?:dialogdata|a|\/a|d|\/d|\/?component|label|skin|output)/

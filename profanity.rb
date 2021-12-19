@@ -960,24 +960,25 @@ end
 
 unless File.exists?(SETTINGS_FILENAME)
 
-	File.open(SETTINGS_FILENAME, 'w') { |file| file.write " <!DOCTYPE highlight [
-  <!ENTITY black "000000">
-  <!ENTITY red "800000">
-  <!ENTITY green "00ff00">
-  <!ENTITY yellow "ffff00">
-  <!ENTITY blue "0000ff">
-  <!ENTITY magenta "ff00ff">
-  <!ENTITY cyan "00ffff">
-  <!ENTITY white "ffffff">
-  <!ENTITY material-green "1B5E20">
-  <!ENTITY material-purple "311B92">
-  <!ENTITY grey "888888">
-  <!ENTITY material-bluegrey "546E7A">
-  <!ENTITY monokai-magenta "f92672">
-  <!ENTITY monokai-blue "66D9EF">
-  <!ENTITY navy-blue "000080">
-  <!ENTITY royal-purple "800080"> 
-  <!ENTITY orange "ff0000">
+	File.open(SETTINGS_FILENAME, 'w') { |file| file.write "
+<\!DOCTYPE highlight [
+  <\!ENTITY black \"000000\">
+  <\!ENTITY red \"800000\">
+  <\!ENTITY green \"00ff00\">
+  <\!ENTITY yellow \"ffff00\">
+  <\!ENTITY blue \"0000ff\">
+  <\!ENTITY magenta \"ff00ff\">
+  <\!ENTITY cyan \"00ffff\">
+  <\!ENTITY white \"ffffff\">
+  <\!ENTITY material-green \"1B5E20\">
+  <\!ENTITY material-purple \"311B92\">
+  <\!ENTITY grey \"888888\">
+  <\!ENTITY material-bluegrey \"546E7A\">
+  <\!ENTITY monokai-magenta \"f92672\">
+  <\!ENTITY monokai-blue \"66D9EF\">
+  <\!ENTITY navy-blue \"000080\">
+  <\!ENTITY royal-purple \"800080\"> 
+  <\!ENTITY orange \"ff0000\">
 ]>
 
 <settings>

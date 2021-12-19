@@ -960,109 +960,180 @@ end
 
 unless File.exists?(SETTINGS_FILENAME)
 
-	File.open(SETTINGS_FILENAME, 'w') { |file| file.write "<settings>
-	<highlight fg='9090ff'>^(?:You gesture|You intone a phrase of elemental power|You recite a series of mystical phrases|You trace a series of glowing runes|Your hands glow with power as you invoke|You trace a simple rune while intoning|You trace a sign while petitioning the spirits|You trace an intricate sign that contorts in the air).*$</highlight>
-	<highlight fg='9090ff'>^(?:Cast Roundtime 3 Seconds\\.|Your spell is ready\\.)$</highlight>
-	<highlight fg='9090ff'>^.*remaining\\. \\]$</highlight>
-	<highlight fg='88aaff'>([A-Z][a-z]+ disk)</highlight>
-	<highlight fg='555555'>^\\[.*?\\](?:>|&gt;).*$</highlight>
-	<highlight fg='555555'>\\([0-9][0-9]\\:[0-9][0-9]\\:[0-9][0-9]\\)$</highlight>
-	<highlight fg='0000ff'>^\\[LNet\\]</highlight>
-	<highlight fg='008000'>^\\[code\\]</highlight>
-	<highlight fg='808000'>^\\[Shattered\\]</highlight>
-	<highlight fg='ffffff'>^\\[Private(?:To)?\\]</highlight>
-	<highlight fg='008000'>^--- Lich:.*</highlight>
-	<highlight fg='565656'>\\((?:calmed|dead|flying|hiding|kneeling|prone|sitting|sleeping|stunned)\\)</highlight>
-	<highlight fg='ff0000'>^.* throws (?:his|her) arms skyward!$|swirling black void|(?:Dozens of flaming meteors light the sky nearby!|Several flaming meteors light the nearby sky!|Several flaming rocks burst from the sky and smite the area!|A low roar of quickly parting air can be heard above!)</highlight>
-	<highlight fg='ffffff'>^.*(?:falls slack against the floor|falls slack against the ground|falls to the floor, motionless|falls to the ground dead|falls to the ground motionless|and dies|and lies still|goes still|going still)\\.$</highlight>
-	<highlight fg='ffffff'>^.* is stunned!$|^You come out of hiding\\.$</highlight>
-	<highlight fg='ffaaaa'>.*ruining your hiding place\\.$|^You are no longer hidden\\.$|^\\s*You are (?:stunned|knocked to the ground).*|^You are unable to remain hidden!$|^You are visible again\\.$|^You fade into sight\\.$|^You fade into view.*|^You feel drained!$|^You have overextended yourself!$|^You feel yourself going into shock!$</highlight>
-	<preset id='whisper' fg='66ff66'/>
-	<preset id='speech' fg='66ff66'/>
-	<preset id='roomName' fg='ffffff'/>
-	<preset id='monsterbold' fg='d2bc2a'/>
+	File.open(SETTINGS_FILENAME, 'w') { |file| file.write " <!DOCTYPE highlight [
+  <!ENTITY black "000000">
+  <!ENTITY red "800000">
+  <!ENTITY green "00ff00">
+  <!ENTITY yellow "ffff00">
+  <!ENTITY blue "0000ff">
+  <!ENTITY magenta "ff00ff">
+  <!ENTITY cyan "00ffff">
+  <!ENTITY white "ffffff">
+  <!ENTITY material-green "1B5E20">
+  <!ENTITY material-purple "311B92">
+  <!ENTITY grey "888888">
+  <!ENTITY material-bluegrey "546E7A">
+  <!ENTITY monokai-magenta "f92672">
+  <!ENTITY monokai-blue "66D9EF">
+  <!ENTITY navy-blue "000080">
+  <!ENTITY royal-purple "800080"> 
+  <!ENTITY orange "ff0000">
+]>
+
+<settings>
+    <!-- Skill gradient -->
+    <highlight fg='ffffff'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\(0\/34\)</highlight>
+    <highlight fg='acf0f2'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((1|2)\/34\)</highlight>
+    <highlight fg='9aece6'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((3|4)\/34\)</highlight>
+    <highlight fg='8ae8d7'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((5|6)\/34\)</highlight>
+    <highlight fg='80e4c5'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((7|8)\/34\)</highlight>
+    <highlight fg='7bdeb1'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((9|10)\/34\)</highlight>
+    <highlight fg='7cd89a'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((11|12)\/34\)</highlight>
+    <highlight fg='82d181'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((13|14)\/34\)</highlight>
+    <highlight fg='8bc968'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((15|16)\/34\)</highlight>
+    <highlight fg='96c14d'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((17|18)\/34\)</highlight>
+    <highlight fg='a2b731'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((19|20)\/34\)</highlight>
+    <highlight fg='afac07'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+?\s?\w+\s+\((21|22)\/34\)</highlight>
+    <highlight fg='bd9f00'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+?\s?\w+\s+\((23|24)\/34\)</highlight>
+    <highlight fg='cb9100'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((25|26)\/34\)</highlight>
+    <highlight fg='d98100'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+\s+\((27|28)\/34\)</highlight>
+    <highlight fg='e76d00'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+?\s?\w+\s+\((29|30)\/34\)</highlight>
+    <highlight fg='f45300'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+?\s?\w+\s+\((31|32)\/34\)</highlight>
+    <highlight fg='ff2d00'>\w+(\s\w+)?:\s+\d+\s(\d{1,2}|100)(\.\d{2})?%\s\w+?\s?\w+\s+\((33|34)\/34\)</highlight>
+
+    <highlight fg='&orange;'>^(--- Lich|\[go2):.*</highlight>
+    <highlight fg='&orange;'>^\[(?i)(accept-sell|addroom|afk|alchemy|alias|almanac|appraisal|arenawatch|arrows|astrology|athletics|attunement|autocontingency|automap|autostart|avtalia|bankbot|bescort|better-book|boggle_blast|bolts|bonding-rose|bootstrap|buff|buffother|buff-watcher|bug-grabber|burgle|carve-bead|carve|charge-holy-weapon|checkfavors|chop-wood|circlecheck|clean-leather|clean-lumber|cleric-quests|clerk-tools|combat-trainer|common-arcana|common-crafting|common-healing-data|common-healing|common-items|common|common-money|common-moonmage|common-summoning|common-theurgy|common-travel|common-validation|commune|coordinator|corn-maze.*|craft|create_remedies|crossing-repair|crossing-training|crowns|dependency|discern|drinfomon|dusk-labyrin th|echo|edityaml|empathylink|enchant|equipmanager|esp|events|examine|exp-monitor|expreset|faskinner|faux-atmo|favor|feed-cloak|fill-dirt|find-darkbox|find|fir|first-aid|forestry-buddy|forge|gate|gbox|generate-profile|get2|glyph-of-mana|gmoney|go2|gosafe|gpouch|grave-pile|healer|healme|heal-remedy|herb-stock|horse-trainer|hunting-buddy|infomon|inventory-manager|invoke-rune|jail-buddy|join-thieves|journal|kill-counter|lamprey|learned|levelup|lichbot|links|lnet|lockbox|locksmithing|makesteel|mapmap|mech-lore|mine|mining-buddy|mining-manager|mm|moonwatch|multi|narost-glass|narost|newbie-gear|new-character|nexus|om|oshu_manor|outdoorsmanship|paladin-quests|pattern-hues|pay-debt|performance|performance-monitor|pick|pilgrimage|playermonitor|play|pray-chadatru|ranger-companion|register|release_cyclic|remedy|repeat|repository|restock|restock-shop|rezz|riverhaven-thieves|roomnumbers|safe-room|sanowret-crystal|schedule|scouting|scroll-search|sell-loot|sell-pouches|setupaliases|sew|shape|shit-list|skill-recorder|slackbot|smartlisten|smarttransfer|smash-pumpkins|smash-shells|smelt-deeds|smelt|smith|smoke|sorcery|sorter|spellmonitor|spin|spinner|stabbity|stack-scrolls|status-monitor|steal|study-art|su-helmas|summoning|t2|tarantula|tdps|tendme|tendother|textsubs|theurgy|tinker|tithe|titlecheck|trade|training-manager|train|transfer-items|truffenyi-commune-quest|ulfhara|update-shops|validate|vanity-pet|vars|wait|walkingastro|wand-watcher|weararmor|weave-cloth|workorders)(\]|:)?</highlight>
+
+	<highlight fg='&magenta;'>\((?:calmed|dead|flying|hiding|kneeling|prone|sitting|sleeping|stunned)\)</highlight>
+
+	<preset id='whisper' fg='&cyan;'/>
+	<preset id='speech' fg='&green;'/>
+	<preset id='roomName' fg='&green;'/>
+	<preset id='monsterbold' fg='&yellow;'/>
 	<preset id='familiar' bg='00001a'/>
-	<preset id='thoughts' bg='001a00'/>
+	<preset id='thoughts' bg='&white;'/>
 	<preset id='voln' bg='001a00'/>
-	<key id='alt'>
-		<key id='f' macro='something'/>
-	</key>
+
+<!-- Keybindings -->
+
 	<key id='enter' action='send_command'/>
 	<key id='left' action='cursor_left'/>
 	<key id='right' action='cursor_right'/>
 	<key id='ctrl+left' action='cursor_word_left'/>
 	<key id='ctrl+right' action='cursor_word_right'/>
-	<key id='home' action='cursor_home'/>
-	<key id='end' action='cursor_end'/>
+	<key id='shift+home' action='cursor_home'/>
+	<key id='shift+end' action='cursor_end'/>
 	<key id='backspace' action='cursor_backspace'/>
-	<key id='win_backspace' action='cursor_backspace'/>
-	<key id='ctrl+?' action='cursor_backspace'/>
+	<key id='ctrl+h' action='cursor_backspace'/>
+	<key id='ctrl+w' action='cursor_backspace_word'/>
+	<key id='ctrl+u' action='cursor_kill_line'/>
 	<key id='delete' action='cursor_delete'/>
 	<key id='tab' action='switch_current_window'/>
-	<key id='alt+page_up' action='scroll_current_window_up_one'/>
-	<key id='alt+page_down' action='scroll_current_window_down_one'/>
 	<key id='page_up' action='scroll_current_window_up_page'/>
 	<key id='page_down' action='scroll_current_window_down_page'/>
+	<key id='alt+page_up' action='scroll_current_window_up_one'/>
+	<key id='alt+page_down' action='scroll_current_window_down_one'/>
 	<key id='up' action='previous_command'/>
 	<key id='down' action='next_command'/>
-	<key id='ctrl+up' action='send_last_command'/>
-	<key id='alt+up' action='send_second_last_command'/>
-	<key id='resize' action='resize'/>
-	<key id='ctrl+d' macro='\\xstance defensive\\r'/>
-	<key id='ctrl+o' macro='\\xstance offensive\\r'/>
-	<key id='ctrl+g' macro='\\xremove my buckler\\r'/>
-	<key id='ctrl+p' macro='\\xwear my buckler\\r'/>
-	<key id='ctrl+f' macro='\\xtell familiar to '/>
-	<layout id='default'>
-		<window class='text' top='6' left='12' width='cols-12' height='lines-7' value='main' buffer-size='2000' />
-		<window class='text' top='0' left='0' height='6' width='cols' value='lnet,thoughts,voln' buffer-size='1000' />
-		<window class='text' top='7' left='0' width='11' height='lines-31' value='death,logons' buffer-size='500' />
 
-		<window class='indicator' top='lines-1' left='12' height='1' width='1' label='&gt;' value='prompt' fg='444444,44444'/>
-		<window class='command' top='lines-1' left='13' width='cols-13' height='1' />
+	<!-- WEAPONS -->
+    <highlight fg='&yellow;'>\b(sipar|shield|arrows?|bolts|jambiya|katar|spike|(hand|throwing) (axe|club|star|dagger|blade)|(?&lt;!throwing )(axe|club)|scimitar|maul|greataxe|((composite|short)\s|cross|long|latch|stone)?bow|allarh|boomerang|cutlass|hammer|bola|claymore|knife|(night|parry )?stick|sling|mace|(broad|long|bastard\s)?sword|spear|blade|pasabas)\b</highlight>
 
-		<window class='progress' top='lines-11' left='0' width='11' height='1' label='stance:' value='stance' bg='290055'/>
-		<window class='progress' top='lines-10' left='0' width='11' height='1' label='mind:' value='mind' bg='663000,442000'/>
-		<window class='progress' top='lines-8' left='0' width='11' height='1' label='health:' value='health' bg='004800,003300'/>
-		<window class='progress' top='lines-7' left='0' width='11' height='1' label='spirit:' value='spirit' bg='333300,222200'/>
-		<window class='progress' top='lines-6' left='0' width='11' height='1' label='mana:' value='mana' bg='0000a0,000055'/>
-		<window class='progress' top='lines-5' left='0' width='11' height='1' label='stam:' value='stamina' bg='003333,002222'/>
-		<window class='progress' top='lines-3' left='0' width='11' height='1' label='load:' value='encumbrance' bg='990033,4c0019' fg='nil,nil,nil,444444'/>
+	<!-- random highlights -->
+    <highlight fg='&yellow;'>\b(pouch|scroll|cambrinth|gwethdesuan|a corn maze ticket)\b</highlight>
 
-		<window class='countdown' top='lines-2' left='0' width='11' height='1' label='stun:' value='stunned' fg='444444,dddddd' bg='nil,aa0000'/>
-		<window class='countdown' top='lines-1' left='0' width='11' height='1' label='rndtime:' value='roundtime' fg='444444,dddddd,dddddd,dddddd' bg='nil,aa0000,0000aa'/>
+        <!-- Names -->
+    <highlight fg='&green;'>\b(Encumbrance|Name|Race|Guild|Gender|Age|Circle|Wealth|Debt|Favors|Encumbrance|Time Development Points|Deaths|Departs|Overall state of mind|Rested EXP Stored|Usable This Cycle|Cycle Refreshes|Total Ranks Displayed|Skills Included|(\w+) Average)\s?:</highlight>
 
-		<window class='indicator' top='lines-15' left='1' height='1' width='1' label='^' value='compass:up' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-14' left='1' height='1' width='1' label='o' value='compass:out' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-13' left='1' height='1' width='1' label='v' value='compass:down' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-15' left='5' height='1' width='1' label='*' value='compass:nw' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-14' left='5' height='1' width='1' label='&lt;' value='compass:w' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-13' left='5' height='1' width='1' label='*' value='compass:sw' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-15' left='7' height='1' width='1' label='^' value='compass:n' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-13' left='7' height='1' width='1' label='v' value='compass:s' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-15' left='9' height='1' width='1' label='*' value='compass:ne' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-14' left='9' height='1' width='1' label='&gt;' value='compass:e' fg='444444,ffff00'/>
-		<window class='indicator' top='lines-13' left='9' height='1' width='1' label='*' value='compass:se' fg='444444,ffff00'/>
+        <!-- Health related -->
+    <highlight fg='&red;'>\b(feel a warmth radiate from [^ ]+ touch|feel fully rested|have a brief sensation that leaves your wounds tingling)\.</highlight>
+    <highlight fg='&yellow;'>\w(abdomen|back|chest|head|skin|nerves|(left|right) (arm|leg|eye|hand)|neck)\w</highlight>
 
-		<window class='indicator' top='lines-23' left='1' height='1' width='1' label='e' value='leftEye' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-23' left='5' height='1' width='1' label='e' value='rightEye' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-22' left='3' height='1' width='1' label='O' value='head' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-21' left='2' height='1' width='1' label='/' value='leftArm' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-21' left='3' height='1' width='1' label='|' value='chest' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-21' left='4' height='1' width='1' label='\\' value='rightArm' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-20' left='1' height='1' width='1' label='o' value='leftHand' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-20' left='3' height='1' width='1' label='|' value='abdomen' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-20' left='5' height='1' width='1' label='o' value='rightHand' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-19' left='1' height='2' width='2' label=' /o' value='leftLeg' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-19' left='4' height='2' width='2' label='\\  o' value='rightLeg' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-23' left='8' height='1' width='2' label='ns' value='nsys' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-21' left='8' height='1' width='2' label='nk' value='neck' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
-		<window class='indicator' top='lines-19' left='8' height='1' width='2' label='bk' value='back' fg='444444,ffff00,ff6600,ff0000,00ffff,0066ff,0000ff'/>
+	<!-- BOXES -->
+    <highlight fg='&yellow;'>\b(box|caddy|crate|trunk|casket|skippet|chest|coffer|strongbox)\b</highlight>
 
-		<window class='indicator' top='lines-17' left='0' height='1' width='3' label='psn' value='poisoned' fg='444444,ff0000'/>
-		<window class='indicator' top='lines-17' left='4' height='1' width='3' label='dis' value='diseased' fg='444444,ff0000'/>
-		<window class='indicator' top='lines-17' left='8' height='1' width='3' label='bld' value='bleeding' fg='444444,ff0000'/>
-	</layout>
+    <!-- GEMS -->
+    <highlight fg='&yellow;'>\b(alexandrite|amber|amethyst|carnelian|chalcedony|citrine|coral|diamond|emerald|garnet|jade|jasper|lazuli|moonstone|onyx|opal|sapphire|spinel|topaz|tourmaline|pearl|turqoise)\b</highlight>
+    <highlight fg='&orange;'>\b(slim|alfar|warrior)\b</highlight>
+
+    <!-- MISC -->
+    <highlight fg='&green;'>^\[DRPrime\]</highlight>
+    <highlight fg='&green;'>^\[LichNet\]</highlight>
+    <highlight fg='&green;'>^\[Private(?:To)?\]</highlight>
+    <highlight fg='&white;'>\b(?i)(you|your)\b </highlight>
+    <highlight fg='&red;'>(^\[?Roundtime.*|type: AWAKEN)</highlight>
+    <highlight fg='&red;'>^\.\.\.wait \d seconds.$</highlight>
+    <highlight fg='&green;'>^(Obvious (exits|paths)|Room (Number|Exits)|Showing all skills with field experience.|Also here):</highlight>
+    <highlight fg='&red;'>which appears dead</highlight>
+
+    <highlight fg='&magenta;'>^Your formation of a targeting pattern.*</highlight>
+    <highlight fg='&magenta;'>^You leap out of hiding.*</highlight>
+    <highlight fg='&magenta;'>^.*position yourself behind.*</highlight>
+    <highlight fg='&magenta;'>^.*masterfully position yourself to strike.*</highlight>
+    <highlight fg='&magenta;'>^.*best shot possible.*</highlight>
+    <highlight fg='&magenta;'>^You dash forward.*</highlight>
+    <highlight fg='&magenta;'>^Utilizing flawless combat expertise.*</highlight>
+
+    <highlight fg='&magenta;'>^You feel fully prepared to cast your.*</highlight>
+    <highlight fg='&magenta;'>^You sense a successful empathic link.*</highlight>
+    <highlight fg='&magenta;'>^You sense that.*</highlight>
+    <highlight fg='&magenta;'>^The internal (wounds|scars).*</highlight>
+    <highlight fg='&royal-purple;'>^The external (wounds|scars).*</highlight>
+
+    <!--- Death Messages --> 
+    <highlight fg='&red;'>^An armored warklin crumbles.*</highlight>
+    <highlight fg='&red;'>^.*a grating bellow.*</highlight>
+    <highlight fg='&red;'>^The scout gurgles.*</highlight>
+    <highlight fg='&red;'>^The scout coughs up.*</highlight>
+    <highlight fg='&red;'>^The wind hound lets loose.*</highlight>
+    <highlight fg='&red;'>^A zombie stomper falls belly-up.*</highlight>
+    <highlight fg='&red;'>^.*eyes glaze over.*</highlight>
+    <highlight fg='&red;'>^.*closing its eyes forever.*</highlight>
+    <highlight fg='&red;'>^.*eyes roll back in its head.*</highlight>
+    <highlight fg='&red;'>^.*one last time and collapses.*</highlight>
+    <highlight fg='&red;'>^A storm bull expires.*</highlight> 
+
+    <highlight fg='&white;'>^You begin chanting a mantra.*</highlight>
+    <highlight fg='&white;'>^You trace a.*</highlight>
+
+    <highlight fg='&magenta;'>^A feeling of shock washes through your veins.*</highlight> 
+    <highlight fg='&magenta;'>^A hulking Xala'shar magus glowers darkly at.*</highlight> 
+
+    <highlight fg='&yellow;'>^.*begins to advance on you.$</highlight>
+    <highlight fg='&yellow;'>The groaning sound culminates in a section of wall</highlight>
+
+    <layout id='default'>  
+      <window class='text'       top='0'        left='1'        height='5'        width='cols/2-1'    value='lnet,thoughts,voln' buffer-size='1000' timestamp='false' log='true' bg='000000'/>
+      <window class='text'       top='0'        left='cols/2+1' height='5'        width='cols/2-30'   value='talk,whispers'      buffer-size='1000' timestamp='false' log='true' bg='000000'/>
+      <window class='text'       top='6'        left='1'        height='8'        width='cols-30'     value='combat'             buffer-size='1000' timestamp='true'  log='true' bg='000000' />
+<!--      <window class='exp'        top='0'        left='cols-28'  height='lines-12' width='28'      value='exp'                buffer-size='1000' log='true' fg='ffffff' bg='000000'/> -->
+      <window class='percWindow' top='0'        left='cols-28'  height='13'       width='28'          value='percWindow'         buffer-size='1000' log='true' bg='000000'/>
+      <window class='moonWindow' top='lines-1'  left='75'       height='1'        width='40'          value='moonWindow'         buffer-size='1000' log='true' bg='000000'/>
+      <window class='text'       top='14'       left='1'        height='lines-16' width='cols'      value='main'               buffer-size='1000' log='true' bg='000000'/>
+
+      <window class='indicator' top='lines-2' left='0' width='1' height='1' label='#' fg='&white;'/>
+      <window class='command'   top='lines-2' left='1' width='cols-35' height='1'/>
+      <window class='countdown' top='lines-1' left='0' width='10' height='1' label='' value='roundtime' fg='&white;,&white;,&white;,&white;' bg='nil,0000ff,ffff00'/>
+
+      <window class='progress' top='lines-1' left='cols-19' width='3' height='1' label='' value='health' fg='&white;,&white;,&white;' bg='&red;,&red;'/>
+      <window class='progress' top='lines-1' left='cols-15' width='3' height='1' label='' value='mana' fg='&blue;,&blue;,&blue;' bg='000000,000000'/>
+      <window class='progress' top='lines-1' left='cols-11' width='3' height='1' label='' value='stamina' fg='000088,000088,000088' bg='000000,000000'/>
+      <window class='progress' top='lines-1' left='cols-7' width='3' height='1' label='' value='concentration' fg='&green;' bg='&black;'/>
+      <window class='progress' top='lines-1' left='cols-3' width='3' height='1' label='' value='spirit' fg='&white;,&white;,&white;' bg='&blue;'/>
+
+      <window class='indicator' top='lines-1' left='cols-36' height='1' width='4' label='STUN' value='stunned' fg='&grey;,&yellow;'/>
+      <window class='indicator' top='lines-1' left='cols-31' height='1' width='3' label='PSN' value='poisoned' fg='&grey;,&green;'/>
+      <window class='indicator' top='lines-1' left='cols-27' height='1' width='3' label='DIS' value='diseased' fg='&grey;,&royal-purple;'/>
+      <window class='indicator' top='lines-1' left='cols-23' height='1' width='3' label='BLD' value='bleeding' fg='&grey;,&red;'/>
+
+      <window class='indicator' top='lines-1' left='17' height='1' width='3' label='L:' fg='&blue;'/>
+      <window class='indicator' top='lines-1' left='32' height='1' width='3' label='R:' fg='&blue;'/>
+      <window class='indicator' top='lines-1' left='47' height='1' width='3' label='S:' fg='&blue;'/>
+
+      <window class='indicator' top='lines-1' left='20' height='1' width='10' label=' ' value='left'  fg='&white;,&royal-purple;'/>
+      <window class='indicator' top='lines-1' left='35' height='1' width='10' label=' ' value='right' fg='&white;,&royal-purple;'/>
+      <window class='indicator' top='lines-1' left='50' height='1' width='25' label=' ' value='spell' fg='&white;,&royal-purple;'/>
+    </layout>
 </settings>
 " }
 

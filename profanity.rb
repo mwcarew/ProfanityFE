@@ -1423,7 +1423,7 @@ load_layout = proc { |layout_id|
 						stream_handler['exp'] = ExpWindow.new(height, width - 1, top, left)
 						stream_handler['exp'].logger = logger
 					elsif e.attributes['class'] == 'moonWindow'
-						stream_handler['moonWindow'] = moonWindow.new(height, width - 1, top, left)
+						stream_handler['moonWindow'] = PercWindow.new(height, width - 1, top, left)
 						stream_handler['moonWindow'].logger = logger
 					elsif e.attributes['class'] == 'percWindow'
 						stream_handler['percWindow'] = PercWindow.new(height, width - 1, top, left)

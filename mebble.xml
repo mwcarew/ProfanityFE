@@ -1,0 +1,22 @@
+<settings>
+    <highlight fg='545454'>^\[.*?\](?:>|&gt;).*$</highlight>
+    <highlight fg='545454'>\([0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]\)$</highlight>
+    <highlight fg='80cbc4'>^--- Lich:.*</highlight>
+    <highlight fg='808000'>^Roundtime.*</highlight>
+    <key id='enter' action='send_command'/>
+    <key id='left' action='cursor_left'/>
+    <key id='right' action='cursor_right'/>
+    <key id='backspace' action='cursor_backspace'/>
+    <key id='tab' action='switch_current_window'/>
+    <key id='page_up' action='scroll_current_window_up_page'/>
+    <key id='page_down' action='scroll_current_window_down_page'/>
+    <key id='up' action='previous_command'/>
+    <key id='down' action='next_command'/>
+    <layout id='default'>
+        <window class='text' top='0' left='0' height='14' width='(cols/2)' value='lnet,thoughts,voln' buffer-size='1000' timestamp='true' log='true' />
+        <window class='text' top='0' left='(cols/2)' height='14' width='(cols/2)' value='talk,whispers' buffer-size='1000' timestamp='true' log='true' />
+        <window class='text' top='15' left='0' height='lines-17' width='cols' value='main,combat' buffer-size='2000' log='true' />
+        <window class='indicator' top='lines-1' left='0' height='1' width='1' label='&gt;' value='prompt' />
+        <window class='command' top='lines-1' left='1' height='1' width='cols-1' />
+    </layout>
+</settings>

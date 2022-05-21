@@ -1,8 +1,29 @@
+<!-- Set terminal background color: #212121 -->
+<!-- Set terminal foreground color: #eeffff -->
+<!DOCTYPE highlight [
+  <!ENTITY black "212121">
+  <!ENTITY blue "82aaff">
+  <!ENTITY bold "FF9800">
+  <!ENTITY cyan "89ddff">
+  <!ENTITY error "ff5370">
+  <!ENTITY gray "616161">
+  <!ENTITY green "c3e88d">
+  <!ENTITY orange "f78c6c">
+  <!ENTITY purple "c792ea">
+  <!ENTITY red "f07178">
+  <!ENTITY teal "80cbc4">
+  <!ENTITY white "eeffff">
+  <!ENTITY yellow "ffcb6b">
+]>
+
 <settings>
-    <highlight fg='545454'>^\[.*?\](?:>|&gt;).*$</highlight>
-    <highlight fg='545454'>\([0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]\)$</highlight>
-    <highlight fg='80cbc4'>^--- Lich:.*</highlight>
-    <highlight fg='808000'>^Roundtime.*</highlight>
+    <highlight fg='&gray;'>^\[.*?\](?:>|&gt;).*$</highlight>
+    <highlight fg='&gray;'>\([0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]\)$</highlight>
+    <highlight fg='&blue;'>^--- Lich:.*</highlight>
+    <preset id='whisper' fg='&yellow;'/>
+    <preset id='speech' fg='&yellow;'/>
+    <preset id='roomName' fg='&green;'/>
+    <preset id='monsterbold' fg='&bold;'/>
     <key id='enter' action='send_command'/>
     <key id='left' action='cursor_left'/>
     <key id='right' action='cursor_right'/>
@@ -13,10 +34,21 @@
     <key id='up' action='previous_command'/>
     <key id='down' action='next_command'/>
     <layout id='default'>
+        <window class='text' top='15' left='28' height='lines-16' width='cols-28' value='main,combat' buffer-size='3000' log='true' />
+        <window class='indicator' top='lines-1' left='28' height='1' width='1' label='&gt;' value='prompt' />
+        <window class='command' top='lines-1' left='29' height='1' width='cols-29' />
+
+        <!-- top bar -->
         <window class='text' top='0' left='0' height='14' width='(cols/2)' value='lnet,thoughts,voln' buffer-size='1000' timestamp='true' log='true' />
-        <window class='text' top='0' left='(cols/2)' height='14' width='(cols/2)' value='talk,whispers' buffer-size='1000' timestamp='true' log='true' />
-        <window class='text' top='15' left='0' height='lines-17' width='cols' value='main,combat' buffer-size='2000' log='true' />
-        <window class='indicator' top='lines-1' left='0' height='1' width='1' label='&gt;' value='prompt' />
-        <window class='command' top='lines-1' left='1' height='1' width='cols-1' />
+        <window class='text' top='0' left='(cols/2)' height='14' width='(cols/2)' value='talk,whispers,death,ooc' buffer-size='1000' log='true' />
+
+        <!-- side bar -->
+        <window class='exp' top='15' left='0' height='lines-20' width='28' value='exp' buffer-size='2000' />
+        <window class='progress' top='lines-3' left='14' height='1' width='13' label='Mana:' value='mana' fg='&black;' bg='&blue;' />
+        <window class='progress' top='lines-3' left='0' height='1' width='13' label='Stamina:' value='stamina' fg='&black;' bg='&green;' />
+        <window class='progress' top='lines-2' left='14' height='1' width='13' label='Health:' value='health' fg='&black;' bg='&red;' />
+        <window class='progress' top='lines-2' left='0' height='1' width='13' label='Spirit:' value='spirit' fg='&black;' bg='&purple;' />
+        <window class='countdown' top='lines-1' left='14' height='1' width='13' label='Roundtime:' value='roundtime' fg='&gray;,&black;,&black;,&white;' bg='nil,&error;,&cyan;' />
+        <window class='progress' top='lines-1' left='0' height='1' width='13' label='Concen:' value='concentration' fg='&black;' bg='&gray;' />
     </layout>
 </settings>

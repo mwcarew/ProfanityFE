@@ -44,10 +44,10 @@
 
         <!-- side bar -->
         <window class='exp' top='15' left='0' height='lines-25' width='28' value='exp' buffer-size='2000' />
-        <window class='progress' top='lines-3' left='14' height='1' width='13' label='Mana:' value='mana' fg='&black;' bg='&blue;' />
-        <window class='progress' top='lines-3' left='0' height='1' width='13' label='Stamina:' value='stamina' fg='&black;' bg='&teal;' />
-        <window class='progress' top='lines-2' left='14' height='1' width='13' label='Health:' value='health' fg='&black;' bg='&green;' />
-        <window class='progress' top='lines-2' left='0' height='1' width='13' label='Spirit:' value='spirit' fg='&black;' bg='&purple;' />
+        <window class='progress' top='lines-3' left='14' height='1' width='13' label='Health:' value='health' fg='&black;' bg='&purple;' />
+        <window class='progress' top='lines-3' left='0' height='1' width='13' label='Spirit:' value='spirit' fg='&black;' bg='&teal;' />
+        <window class='progress' top='lines-2' left='14' height='1' width='13' label='Mana:' value='mana' fg='&black;' bg='&blue;' />
+        <window class='progress' top='lines-2' left='0' height='1' width='13' label='Stamina:' value='stamina' fg='&black;' bg='&green;' />
         <window class='countdown' top='lines-1' left='14' height='1' width='13' label='Roundtime:' value='roundtime' fg='&gray;,&black;,&black;,&white;' bg='nil,&error;,&cyan;' />
         <window class='progress' top='lines-1' left='0' height='1' width='13' label='Concen:' value='concentration' fg='&black;' bg='&gray;' />
 
@@ -58,11 +58,11 @@
         <window class='indicator' top='lines-9' left='2' height='1' width='3' label='L:' fg='&white;'/>
         <window class='indicator' top='lines-9' left='5' height='1' width='17' label=' ' value='left' fg='&gray;,&yellow; '/>
 
-        <window class='indicator' top='lines-5' left='2' height='1' width='3' label='STN' value='stunned' fg='&gray;,&yellow;' />
-        <window class='indicator' top='lines-5' left='6' height='1' width='3' label='PSN' value='poisoned' fg='&gray;,&yellow;' />
-        <window class='indicator' top='lines-5' left='10' height='1' width='3' label='DIS' value='diseased' fg='&gray;,&yellow;' />
-        <window class='indicator' top='lines-5' left='14' height='1' width='3' label='HID' value='hidden' fg='&gray;,&yellow;' />
-        <window class='indicator' top='lines-5' left='18' height='1' width='3' label='INV' value='invisible' fg='&gray;,&yellow;' />
-        <window class='indicator' top='lines-5' left='22' height='1' width='3' label='BLD' value='bleeding' fg='&gray;,&yellow;' />
+        <window class='indicator' top='lines-5' left='2' height='1' width='3' label='INV' value='invisible' fg='&gray;,&yellow;' />
+        <window class='indicator' top='lines-5' left='6' height='1' width='3' label='HID' value='hidden' fg='&gray;,&yellow;' />
+        <window class='indicator' top='lines-5' left='10' height='1' width='3' label='BLD' value='bleeding' fg='&gray;,&yellow;' />
+        <window class='indicator' top='lines-5' left='14' height='1' width='3' label='DIS' value='diseased' fg='&gray;,&yellow;' />
+        <window class='indicator' top='lines-5' left='18' height='1' width='3' label='PSN' value='poisoned' fg='&gray;,&yellow;' />
+        <window class='indicator' top='lines-5' left='22' height='1' width='3' label='STN' value='stunned' fg='&gray;,&yellow;' />
     </layout>
 </settings>

@@ -1,5 +1,5 @@
-<!-- Set terminal background color: #212121 -->
-<!-- Set terminal foreground color: #eeffff -->
+<!-- Terminal background color: #212121 -->
+<!-- Terminal foreground color: #eeffff -->
 <!DOCTYPE highlight [
   <!ENTITY black "212121">
   <!ENTITY blue "82aaff">
@@ -17,6 +17,7 @@
 ]>
 
 <settings>
+    <!-- System highlights -->
     <highlight fg='&gray;'>^\[.*?\](?:>|&gt;).*$</highlight>
     <highlight fg='&gray;'>\([0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]\)$</highlight>
     <highlight fg="&green;">^\[DRPrime\]</highlight>
@@ -25,15 +26,18 @@
     <highlight fg="&yellow;">^\[drscripts\]</highlight>
     <highlight fg="&blue;">^\[Private(?:To)?\]</highlight>
     <highlight fg='&blue;'>^--- Lich:.*</highlight>
-    <highlight fg='&yellow;'>^Roundtime.*</highlight>
-    <highlight fg='&yellow;'>^\[Roundtime.*</highlight>
-    <highlight fg='&yellow;'>^.*begins to advance on you.$</highlight>
+    <highlight fg="&blue;">^.*\*\*\*STATUS\*\*\*.*</highlight>
+    <highlight fg='&green;'>^Gained:\s.*</highlight>
     <highlight fg='&green;'>^(Obvious (exits|paths)|Room (Number|Exits)|Also here):</highlight>
     <highlight fg="&cyan;">You also see .*</highlight>
     <highlight fg="&cyan;">^Also here:.*</highlight>
-    <highlight fg="&red;">^.* backfire.*$</highlight>
-    <highlight fg="&red;">^You get an odd feeling that someone is.*</highlight>
-    <highlight fg="&red;">^You feel your pockets get slightly heavier.*</highlight>
+    <highlight fg='&yellow;'>^Roundtime.*</highlight>
+    <highlight fg='&yellow;'>^\[Roundtime.*</highlight>
+    <highlight fg='&red;'>^\.\.\.wait \d seconds.$</highlight>
+
+    <!-- Combat highlights -->
+    <highlight fg='&yellow;'>^.*begins to advance on you.$</highlight>
+    <highlight fg='&purple;'>^You feel fully prepared to cast your.*</highlight>
     <highlight fg="&purple;">^Your formation of a targeting pattern.*</highlight>
     <highlight fg="&purple;">^You leap out of hiding.*</highlight>
     <highlight fg="&purple;">^.*position yourself behind.*</highlight>
@@ -41,21 +45,9 @@
     <highlight fg="&purple;">^.*best shot possible.*</highlight>
     <highlight fg='&purple;'>^You dash forward.*</highlight>
     <highlight fg='&purple;'>^Utilizing flawless combat expertise.*</highlight>
-    <highlight fg="&green;">^You feel the weakness imparted by your recent death slowly fade away.*</highlight>
-    <highlight fg="&purple;">\((?:calmed|dead|flying|hiding|kneeling|prone|sitting|sleeping|stunned)\)</highlight>
-    <highlight fg="&purple;">.*ruining your hiding place\.$|^You are no longer hidden\.$|^\s*You are (?:stunned|knocked to the ground).*|^You are unable to remain hidden!$|^You are visible again\.$|^You fade into sight\.$|^You fade into view.*|^You feel drained!$|^You have overextended yourself!$|^You feel yourself going into shock!$</highlight>
-    <highlight fg="&purple;">^.*(?:falls slack against the floor|falls slack against the ground|falls to the floor, motionless|falls to the ground dead|falls to the ground motionless|and dies|and lies still|goes still|going still)\.$</highlight>
-    <highlight fg="&purple;">^.* is stunned!$|^You come out of hiding\.$</highlight>
-    <highlight fg="&purple;">[Aa]lmanac</highlight>
-    <highlight fg='&purple;'>^You feel fully prepared to cast your.*</highlight>
-    <highlight fg='&purple;'>^You sense a successful empathic link.*</highlight>
-    <highlight fg='&purple;'>^You sense that.*</highlight>
-    <highlight fg='&purple;'>^The internal (wounds|scars).*</highlight>
-    <highlight fg='&purple;'>^The external (wounds|scars).*</highlight>
     <highlight fg='&purple;'>^A feeling of shock washes through your veins.*</highlight>
     <highlight fg='&purple;'>^A hulking Xala'shar magus glowers darkly at.*</highlight>
-    <highlight fg="&red;">.*Geysers of uncontrolled mana suddenly erupt.*</highlight>
-    <highlight fg="&red;">.*hand like a frail egg shell*</highlight>
+    <highlight fg="&purple;">\((?:calmed|dead|flying|hiding|kneeling|prone|sitting|sleeping|stunned)\)</highlight>
     <highlight fg="&red;">^An armored warklin crumbles.*</highlight>
     <highlight fg="&red;">^.*a grating bellow.*</highlight>
     <highlight fg="&red;">^The scout gurgles.*</highlight>
@@ -68,10 +60,25 @@
     <highlight fg="&red;">^.*one last time and collapses.*</highlight>
     <highlight fg="&red;">^A storm bull expires.*</highlight>
     <highlight fg="&red;">^.*is next.</highlight>
-    <highlight fg='&green;'>^Gained:\s.*</highlight>
-    <highlight fg="&blue;">^.*\*\*\*STATUS\*\*\*.*</highlight>
-    <highlight fg='&red;'>^\.\.\.wait \d seconds.$</highlight>
 
+    <!-- Miscellaneous highlights -->
+    <highlight fg="&green;">^You feel the weakness imparted by your recent death slowly fade away.*</highlight>
+    <highlight fg="&purple;">.*ruining your hiding place\.$|^You are no longer hidden\.$|^\s*You are (?:stunned|knocked to the ground).*|^You are unable to remain hidden!$|^You are visible again\.$|^You fade into sight\.$|^You fade into view.*|^You feel drained!$|^You have overextended yourself!$|^You feel yourself going into shock!$</highlight>
+    <highlight fg="&purple;">^.*(?:falls slack against the floor|falls slack against the ground|falls to the floor, motionless|falls to the ground dead|falls to the ground motionless|and dies|and lies still|goes still|going still)\.$</highlight>
+    <highlight fg="&purple;">^.* is stunned!$|^You come out of hiding\.$</highlight>
+    <highlight fg='&purple;'>^The internal (wounds|scars).*</highlight>
+    <highlight fg='&purple;'>^The external (wounds|scars).*</highlight>
+    <highlight fg="&purple;">[Aa]lmanac</highlight>
+    <highlight fg="&red;">^.* backfire.*$</highlight>
+    <highlight fg="&red;">^You get an odd feeling that someone is.*</highlight>
+    <highlight fg="&red;">^You feel your pockets get slightly heavier.*</highlight>
+    <highlight fg="&red;">.*Geysers of uncontrolled mana suddenly erupt.*</highlight>
+    <highlight fg="&red;">.*hand like a frail egg shell*</highlight>
+
+    <!-- Name highlights -->
+    <highlight fg="&purple;">[Pp]onzu</highlight>
+
+    <!-- Script commands sent to game -->
     <preset id='whisper' fg='&yellow;'/>
     <preset id='speech' fg='&yellow;'/>
     <preset id='roomName' fg='&green;'/>
@@ -108,10 +115,10 @@
         <window class='countdown' top='lines-1' left='14' height='1' width='13' label='Roundtime:' value='roundtime' fg='&gray;,&black;,&black;,&white;' bg='nil,c9c9c9,&purple;' />
         <window class='progress' top='lines-1' left='0' height='1' width='13' label='Concen:' value='concentration' fg='&black;' bg='&gray;' />
         <window class='indicator' top='lines-7' left='2' height='1' width='3' label='S:' fg='&white;'/>
-        <window class='indicator' top='lines-7' left='5' height='1' width='20' label=' ' value='spell' fg='&gray;,&yellow;' />
         <window class='indicator' top='lines-8' left='2' height='1' width='3' label='R:' fg='&white;' />
-        <window class='indicator' top='lines-8' left='5' height='1' width='20' label=' ' value='right' fg='&gray;,&yellow; '/>
         <window class='indicator' top='lines-9' left='2' height='1' width='3' label='L:' fg='&white;'/>
+        <window class='indicator' top='lines-7' left='5' height='1' width='20' label=' ' value='spell' fg='&gray;,&yellow;' />
+        <window class='indicator' top='lines-8' left='5' height='1' width='20' label=' ' value='right' fg='&gray;,&yellow; '/>
         <window class='indicator' top='lines-9' left='5' height='1' width='20' label=' ' value='left' fg='&gray;,&yellow; '/>
         <window class='indicator' top='lines-5' left='2' height='1' width='3' label='INV' value='invisible' fg='&gray;,&yellow;' />
         <window class='indicator' top='lines-5' left='6' height='1' width='3' label='HID' value='hidden' fg='&gray;,&yellow;' />

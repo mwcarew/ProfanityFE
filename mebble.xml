@@ -21,7 +21,6 @@
     <highlight fg='&gray;'>^\[.*?\](?:>|&gt;).*$</highlight>
     <highlight fg='&gray;'>\([0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]\)$</highlight>
     <highlight fg="&green;">^\[DRPrime\]</highlight>
-    <highlight fg="&green;">^\[Trade\]</highlight>
     <highlight fg="&yellow;">^\[code\]</highlight>
     <highlight fg="&yellow;">^\[drscripts\]</highlight>
     <highlight fg="&blue;">^\[Private(?:To)?\]</highlight>
@@ -98,16 +97,16 @@
     <key id='down' action='next_command'/>
 
     <layout id='default'>
-        <window class='text' top='15' left='28' height='lines-16' width='cols-28' value='main,combat' buffer-size='3000' />
+        <window class='text' top='13' left='28' height='lines-14' width='cols-28' value='main,combat' buffer-size='3000' />
         <window class='indicator' top='lines-1' left='28' height='1' width='1' label='&gt;' value='prompt' />
         <window class='command' top='lines-1' left='29' height='1' width='cols-29' />
 
         <!-- top bar -->
-        <window class='text' top='0' left='0' height='14' width='(cols/2)' value='lnet,thoughts,voln' buffer-size='1000' timestamp='true' />
-        <window class='text' top='0' left='(cols/2)' height='14' width='(cols/2)' value='talk,whispers,ooc' buffer-size='1000' timestamp='true' />
+        <window class='text' top='0' left='0' height='12' width='(cols/2)' value='lnet,thoughts,voln' buffer-size='1000' timestamp='true' />
+        <window class='text' top='0' left='(cols/2)' height='12' width='(cols/2)' value='talk,whispers,ooc' buffer-size='1000' timestamp='true' />
 
         <!-- side bar -->
-        <window class='exp' top='15' left='0' height='lines-25' width='28' value='exp' buffer-size='2000' />
+        <window class='exp' top='13' left='0' height='lines-23' width='28' value='exp' buffer-size='2000' />
         <window class='progress' top='lines-3' left='14' height='1' width='13' label='Health:' value='health' fg='&black;' bg='&red;' />
         <window class='progress' top='lines-3' left='0' height='1' width='13' label='Spirit:' value='spirit' fg='&black;' bg='&teal;' />
         <window class='progress' top='lines-2' left='14' height='1' width='13' label='Mana:' value='mana' fg='&black;' bg='&blue;' />

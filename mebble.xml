@@ -75,6 +75,7 @@
     <highlight fg="&red;">.*hand like a frail egg shell*</highlight>
 
     <!-- Name highlights -->
+    <highlight fg="&purple;">[Mm]ebble</highlight>
     <highlight fg="&purple;">[Pp]onzu</highlight>
 
     <!-- Script commands sent to game -->

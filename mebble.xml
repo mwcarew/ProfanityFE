@@ -76,6 +76,7 @@
 
     <!-- Name highlights -->
     <highlight fg="&purple;">[Mm]ebble</highlight>
+    <highlight fg="&purple;">[Mm]orlana</highlight>
     <highlight fg="&purple;">[Pp]onzu</highlight>
 
     <!-- Script commands sent to game -->

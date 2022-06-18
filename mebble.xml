@@ -17,7 +17,7 @@
 ]>
 
 <settings>
-    <!-- System highlights -->
+    <!-- System -->
     <highlight fg='&gray;'>^\[.*?\](?:>|&gt;).*$</highlight>
     <highlight fg='&gray;'>\([0-9][0-9]\:[0-9][0-9]\:[0-9][0-9]\)$</highlight>
     <highlight fg="&green;">^\[DRPrime\]</highlight>
@@ -34,7 +34,7 @@
     <highlight fg='&yellow;'>^\[Roundtime.*</highlight>
     <highlight fg='&red;'>^\.\.\.wait \d seconds.$</highlight>
 
-    <!-- Combat highlights -->
+    <!-- Combat -->
     <highlight fg='&yellow;'>^.*begins to advance on you.$</highlight>
     <highlight fg='&purple;'>^You feel fully prepared to cast your.*</highlight>
     <highlight fg="&purple;">^Your formation of a targeting pattern.*</highlight>
@@ -60,7 +60,7 @@
     <highlight fg="&red;">^A storm bull expires.*</highlight>
     <highlight fg="&red;">^.*is next.</highlight>
 
-    <!-- Miscellaneous highlights -->
+    <!-- Miscellaneous -->
     <highlight fg="&green;">^You feel the weakness imparted by your recent death slowly fade away.*</highlight>
     <highlight fg="&purple;">.*ruining your hiding place\.$|^You are no longer hidden\.$|^\s*You are (?:stunned|knocked to the ground).*|^You are unable to remain hidden!$|^You are visible again\.$|^You fade into sight\.$|^You fade into view.*|^You feel drained!$|^You have overextended yourself!$|^You feel yourself going into shock!$</highlight>
     <highlight fg="&purple;">^.*(?:falls slack against the floor|falls slack against the ground|falls to the floor, motionless|falls to the ground dead|falls to the ground motionless|and dies|and lies still|goes still|going still)\.$</highlight>
@@ -74,10 +74,13 @@
     <highlight fg="&red;">.*Geysers of uncontrolled mana suddenly erupt.*</highlight>
     <highlight fg="&red;">.*hand like a frail egg shell*</highlight>
 
-    <!-- Name highlights -->
+    <!-- Character Names -->
     <highlight fg="&purple;">[Mm]ebble</highlight>
     <highlight fg="&purple;">[Mm]orlana</highlight>
     <highlight fg="&purple;">[Pp]onzu</highlight>
+
+    <!-- Trolls -->
+    <highlight fg="&red;">[Aa]sterid</highlight>
 
     <!-- Script commands sent to game -->
     <preset id='whisper' fg='&yellow;'/>
@@ -88,6 +91,7 @@
     <preset id='thought' fg='&yellow;'/>
     <preset id='voln' bg='&yellow;'/>
 
+    <!-- Hotkeys -->
     <key id='enter' action='send_command'/>
     <key id='left' action='cursor_left'/>
     <key id='right' action='cursor_right'/>
@@ -103,11 +107,11 @@
         <window class='indicator' top='lines-1' left='28' height='1' width='1' label='&gt;' value='prompt' />
         <window class='command' top='lines-1' left='29' height='1' width='cols-29' />
 
-        <!-- top bar -->
+        <!-- Top Bar -->
         <window class='text' top='0' left='28' height='8' width='(cols - 28) / 2' value='lnet,thoughts,voln' buffer-size='1000' timestamp='true' />
         <window class='text' top='0' left='(cols/2) + 14' height='8' width='(cols - 28) / 2' value='talk,whispers,ooc' buffer-size='1000' timestamp='true' />
 
-        <!-- side bar -->
+        <!-- Side Bar -->
         <window class='exp' top='0' left='0' height='lines-10' width='28' value='exp' buffer-size='2000' />
         <window class='progress' top='lines-3' left='14' height='1' width='13' label='Health:' value='health' fg='&black;' bg='&red;' />
         <window class='progress' top='lines-3' left='0' height='1' width='13' label='Spirit:' value='spirit' fg='&black;' bg='&teal;' />

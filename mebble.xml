@@ -36,6 +36,7 @@
 
     <!-- Combat -->
     <highlight fg='&yellow;'>^.*begins to advance on you.$</highlight>
+    <highlight fg='&magenta;'>You feel fully prepared to seek assistance from the Immortals once again\.</highlight>
     <highlight fg='&purple;'>^You feel fully prepared to cast your.*</highlight>
     <highlight fg="&purple;">^Your formation of a targeting pattern.*</highlight>
     <highlight fg="&purple;">^You leap out of hiding.*</highlight>
@@ -65,6 +66,8 @@
     <highlight fg="&green;">^You feel the weakness imparted by your recent death slowly fade away.*</highlight>
     <highlight fg="&purple;">.*ruining your hiding place\.$|^You are no longer hidden\.$|^\s*You are (?:stunned|knocked to the ground).*|^You are unable to remain hidden!$|^You are visible again\.$|^You fade into sight\.$|^You fade into view.*|^You feel drained!$|^You have overextended yourself!$|^You feel yourself going into shock!$</highlight>
     <highlight fg="&purple;">^.*(?:falls slack against the floor|falls slack against the ground|falls to the floor, motionless|falls to the ground dead|falls to the ground motionless|and dies|and lies still|goes still|going still)\.$</highlight>
+    <highlight fg='&magenta;'>a volcanic crevasse</highlight>
+    <highlight fg='&magenta;'>You also see a subtle trail\.</highlight>
     <highlight fg="&purple;">^You come out of hiding.*</highlight>
     <highlight fg='&purple;'>^The internal (wounds|scars).*</highlight>
     <highlight fg='&purple;'>^The external (wounds|scars).*</highlight>
